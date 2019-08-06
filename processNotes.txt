@@ -16,4 +16,24 @@ Installation
         STEP 4: Install MongoDB compass
 
 
+For the initial run of "mongod"
+================================
+    o   For the initial run of mongoDB, you would run "mongod":
+    
+            mongod
+
+    o   However, when you first do this you might encounter an issue that says:
+
+            exception in initandlisten: NonExitentPath: Data directory C:\data\db not found, terminating
+
+    o   All this means is that the default folder that you would store your data in is not there yet, so you need to create it.
+    o   To create your default folder, in Gitbash (NOTE: not command prompt), write:
+
+            md c:\data\db
+
+
+
+
+
+
 
