@@ -11,7 +11,7 @@ Installation
         STEP 1: Download MongoDB using the community installer (DO NOT install Compass during installation because there
                 are a few annoying issues that popped up).
         STEP 2: Find the navigation folder on your local machine.
-            o   Fo example, "C:\Program Files\MongoDB\Server\4.0\bin"
+            o   For example, "C:\Program Files\MongoDB\Server\4.0\bin"
         STEP 3: Under "advanced system settings > enviroment variables", edit the path variable add the previous path.
         STEP 4: Install MongoDB compass
 
