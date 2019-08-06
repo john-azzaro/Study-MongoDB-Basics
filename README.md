@@ -15,27 +15,33 @@ MongoDB and take special note of some of the observations and issues you might e
 
 
 **Step 1: Download MongoDB from https://www.mongodb.com/download-center/community :**
+-----
 > *note: make sure you download the community*
 <br>
 
 **Step 2: Once the download is complete, install on your local machine:**
+-----
 > *note: DO NOT INSTALL MONGODB COMPASS at this time.  A few issues made it difficult to install... install compass AFTER installation.* 
 <br>
 
 **Step 3: Navigate to the installation folder, find "mongod" and copy the directory**
+-----
 > *note: Your installation file directory might be different, but it should look like this: C:\Program Files\MongoDB\Server\4.0\bin*
 > *factual note: "mongod" is "mongo daemon" which is the mongoDB server*
 <br>
 
 **Step 4: In your search bar, look for "advanced system settings", select "enviroment variables", edit the PATH variable by adding the previous path.**
+-----
 > *note: make sure you put the entire path (i.e. "C:\Program Files\MongoDB\Server\4.0\bin" ) in so that it works correctly*
 <br>
 
 **Step 5: Install MongoDB Compass to use the database GUI (graphical user interface).**
+-----
 > *note: make sure you install the community verison*
 <br>
 
 **Step 6: In command prompt, run "mongod" for the first time and (if needed) create a "db" directory for your future data**
+-----
 * When you run "mongod" for the first time you may get an issue that says:
 ```
         exception in initandlisten: NonExitentPath: Data directory C:\data\db not found, terminating
@@ -54,6 +60,7 @@ MongoDB and take special note of some of the observations and issues you might e
 The mongo shell interface allows us to create databases, documents, update, delete, manage collections etc. allowsWhen you use the interactive mongo shell, you are essentially interfacing with your database.
 
 **Step 1: First, run "mongod" in command prompt** 
+-----
 > *note: once you run "mongod", you wont need to use the command prompt window much because we will be using Gitbash to interface with the database, so you can set it aside*
 ```
         mongod                            
@@ -61,6 +68,8 @@ The mongo shell interface allows us to create databases, documents, update, dele
 <br>
 
 **Step 2: Second, run "mongo" in Gitbash to start using the interactive mongo shell**
+-----
+* In Gitbash, write:
 ```
         mongo
 ```
@@ -87,8 +96,15 @@ ctrl-c
 <br>
 
 ## How do you navigate Mongo Shell?
-* To find your current location, type: ```db```.
-* To show current databases, type: ```show dbs```.
-* To create a new database and go into it, type: ```use <new-database-name>```.
-* To create a new collection, type: ```db.createCollection('name-of-collection');```.
-* To show collections, type: ```show collections```
+
+| **What it does:**                            | **Command in mongo shell:**                             |
+| ---------------------------------------- | ----------------------------------------------|
+|       To find your current location              |   ```db```            |
+|      To show current databases               |     ```show dbs```          |
+|      To create a new database and go into it               |   ```use <new-database-name>```            |
+|       To create a new collection              |     ```db.createCollection('name-of-collection');```          |
+|       To show collections              |      ```show collections```         |
+
+
+
+
