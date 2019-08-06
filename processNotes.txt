@@ -1,0 +1,19 @@
+Process Notes for MongoDB study
+================================
+    What is MongoDB?  MongoDB is a schema-less, NoSQL document database that allow syou to store your "documents" as
+    json objects in the database.
+
+Installation
+=============
+    o   Installing MongoDB is a little tricky in that you need to edit path variables and use the command window to run
+        mongoDB on your local machine.  I've broken down the process of installation into the following steps:
+
+        STEP 1: Download MongoDB using the community installer (DO NOT install Compass during installation because there
+                are a few annoying issues that popped up).
+        STEP 2: Find the navigation folder on your local machine.
+            o   Fo example, "C:\Program Files\MongoDB\Server\4.0\bin"
+        STEP 3: Under "advanced system settings > enviroment variables", edit the path variable add the previous path.
+        STEP 4: Install MongoDB compass
+
+
+
