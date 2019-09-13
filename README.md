@@ -15,6 +15,7 @@ Here's an overview of what this study covers:
 * [How do you exit Mongo shell and Mongod?](#)
 * [How do you navigate Mongo Shell?](#)
 * [How do you exit Mongo shell and Mongod?](#)
+* [What does the structure of MongoDB look like?](#)
 
 
 <br>
@@ -121,9 +122,8 @@ The mongo shell interface allows us to create databases, documents, update, dele
 
 <br>
 
-## What is MongoDB compass and what does it do?
-MongoDB Compass is a simple GUI that allows users to explore, insert, modify, and delete from your databases visually as well as run ad hoc queries.  Inside MongoDB compass, 
-you can see all of your **databases**.  For example, you would see something like the ```testDB``` database.  
+## What does the structure of MongoDB look like?
+To get a good idea of the general structure of MongoDB, install MongoDB Compass.  MongoDB Compass is a simple GUI that allows users to explore, insert, modify, and delete from your databases visually as well as run ad hoc queries.  Inside MongoDB compass, you can see all of your **databases**.  For example, you would see something like the ```testDB``` database.  
 ```     
         > admin
         > config
@@ -132,17 +132,17 @@ you can see all of your **databases**.  For example, you would see something lik
 ```
 Inside that database, you would see a list of **collections** with additional information, such as: 
 ```
-        Collection Name    Documents   Avg. Document Size   Total Document Size    Num. Indexes    Total Index Size    Properties
-        _______________    _________   __________________   ___________________    ____________    ________________    __________
-            books            3,950          451.2 B               1.8 MB                1               45.1 KB          
+        Collection Name    Docs    Avg. Doc Size   Total Doc Size    Num. Indexes    Total Index Size    Properties
+        _______________    _____   _____________   ______________    ____________    ________________    __________
+            books          3,950      451.2 B         1.8 MB               1             45.1 KB          
 ```
-And for each **document** in that collection, you will have a list of key/value pairs.
+And for each **document** in that collection, you will have a list of key/value pairs.  In the example below, you have a JSON object for an cookbook, with a variety of properties as well as a unique identifier ```"_id":"59074c7c057aaffaafb0da64" ``` for this particular document.
 ```
         {"_id":"59074c7c057aaffaafb0da64",
         "Author": Object,                      
         "genre":"fiction",
         "uisinec":"Italian",
-        "reviews" Array:
+        "reviews" Array: 
         "name":"Making Bread the Easy Way",
         "book_id":"40365784"}
 ```
