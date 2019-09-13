@@ -1,5 +1,10 @@
 # MongoDB Basics Study
-
+* [What is MongoDB Basics Study?](#)
+* [How do you install MongoDB?](#)
+* [How do you use the interactive Mongo shell?](#)
+* [How do you exit Mongo shell and Mongod?](#)
+* [How do you navigate Mongo Shell?](#)
+* [How do you exit Mongo shell and Mongod?](#)
 <br>
 
 ## What is MongoDB Basics Study?
