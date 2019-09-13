@@ -19,28 +19,23 @@ and adding a default storage file for your Mongo databases on your local machine
 MongoDB and take special note of some of the observations and issues you might encounter and how to resolve them.
 
 
-**Step 1: Download MongoDB from https://www.mongodb.com/download-center/community :**
+### Step 1: Download MongoDB from https://www.mongodb.com/download-center/community :**
 > *note: make sure you download the community*
-<br>
 
-**Step 2: Once the download is complete, install on your local machine:**
+### Step 2: Once the download is complete, install on your local machine:**
 > *note: DO NOT INSTALL MONGODB COMPASS at this time.  A few issues made it difficult to install... install compass AFTER installation.* 
-<br>
 
-**Step 3: Navigate to the installation folder, find "mongod" and copy the directory**
+### Step 3: Navigate to the installation folder, find "mongod" and copy the directory**
 > *note: Your installation file directory might be different, but it should look like this: C:\Program Files\MongoDB\Server\4.0\bin*
 > *factual note: "mongod" is "mongo daemon" which is the mongoDB server*
-<br>
 
-**Step 4: In your search bar, look for "advanced system settings", select "enviroment variables", edit the PATH variable by adding the previous path.**
+### Step 4: In your search bar, look for "advanced system settings", select "enviroment variables", edit the PATH variable by adding the previous path.**
 > *note: make sure you put the entire path (i.e. "C:\Program Files\MongoDB\Server\4.0\bin" ) in so that it works correctly*
-<br>
 
-**Step 5: Install MongoDB Compass to use the database GUI (graphical user interface).**
+### Step 5: Install MongoDB Compass to use the database GUI (graphical user interface).**
 > *note: make sure you install the community verison*
-<br>
 
-**Step 6: In command prompt, run "mongod" for the first time and (if needed) create a "db" directory for your future data**
+### Step 6: In command prompt, run "mongod" for the first time and (if needed) create a "db" directory for your future data**
 * When you run "mongod" for the first time you may get an issue that says:
 ```
         exception in initandlisten: NonExitentPath: Data directory C:\data\db not found, terminating
@@ -84,11 +79,11 @@ The mongo shell interface allows us to create databases, documents, update, dele
 ## How do you exit Mongo shell and Mongod?
 * To exit mongo shell in gitbash, write:
 ```
-quit()
+        quit()
 ```
 * To exit mongod in command prompt, press:
 ```
-ctrl-c
+        ctrl-c
 ```
 <br>
 
