@@ -1,5 +1,6 @@
 # MongoDB Basics Study
 * [What is MongoDB Basics Study?](#)
+* [What is MongoDB?](#)
 * [How do you install MongoDB?](#)
 * [How do you use the interactive Mongo shell?](#)
 * [How do you exit Mongo shell and Mongod?](#)
@@ -16,7 +17,9 @@ The "MongoDB Basics Study" explores the basic functionality of MongoDB and opera
 MongoDB is a popular, schema-less NoSQL document database that allows you to simply store your json object in the database.  Unlike data stored to memory (which will be lost when the server restartes), MongoDB stores *collections* of *documents*. 
 
 **Collections** store documents in a common database (and are analogous to tables in relational databases). Collections hold instance of a sinle type of document.  For example, a collection
-of sports cars (e.g. Ferarri).  **Documents** would hold instances in that collection.  For example, a collection of of Ferrari sports cars would have different documents of those sports cars (e.g. Fararri 458, Ferrari 488, Ferrari Superfast, etc.).
+of sports cars (e.g. Ferarri).  
+
+**Documents** would hold instances in that collection.  For example, a collection of of Ferrari sports cars would have different documents of those sports cars (e.g. Fararri 458, Ferrari 488, Ferrari Superfast, etc.).
 
 
 
