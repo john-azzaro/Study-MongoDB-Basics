@@ -112,12 +112,14 @@ The mongo shell interface allows us to create databases, documents, update, dele
 | **What it does:**                            | **Command in mongo shell:**                             |
 | ---------------------------------------- | ----------------------------------------------|
 |       To find your current location              |   ```db```            |
-|      To show current databases               |     ```show dbs```          |
+|      To show current databases                    |     ```show dbs```          |
+|       To use (i.e. move into) a database     |      ```use <database-name>```         |
 |      To create a new database and go into it               |   ```use <new-database-name>```            |
+|                                                     |                                               |
 |       To create a new collection              |     ```db.createCollection('name-of-collection');```          |
 |       To show collections              |      ```show collections```         |
 |       To delete database              |      ```db.dropDatabase();```         |
-|       To use a named database              |      ```use <database-name>```         |
+|                                                     |                                               |
 |       Import data              |      ```mongoimport -d <db> -c <collection> --drop -f ~/data.json```         |
 
 <br>
@@ -132,18 +134,18 @@ To get a good idea of the general structure of MongoDB, install MongoDB Compass.
 ```
 Inside that database, you would see a list of **collections** with additional information, such as: 
 ```
-        Collection Name    Docs    Avg. Doc Size   Total Doc Size    Num. Indexes    Total Index Size    Properties
-        _______________    _____   _____________   ______________    ____________    ________________    __________
-            books          3,950      451.2 B         1.8 MB               1             45.1 KB          
+    Collection Name    Docs    Avg. Doc Size   Total Doc Size    Num. Indexes    Total Index Size    Properties
+    _______________    _____   _____________   ______________    ____________    ________________    __________
+        books          3,950      451.2 B         1.8 MB               1             45.1 KB          
 ```
-And for each **document** in that collection, you will have a list of key/value pairs.  In the example below, you have a JSON object for an cookbook, with a variety of properties as well as a unique identifier ```"_id":"59074c7c057aaffaafb0da64" ``` for this particular document.
+And for each **document** in that collection, you will have a list of key/value pairs.  In the example below, you have a JSON object for an cookbook, with a variety of properties as well as a unique identifier ```"_id":"59074c7c057aaffaafb0da64" ``` for this particular document.  
 ```
         {"_id":"59074c7c057aaffaafb0da64",
-        "Author": Object,                      
+        "Author": {"firstName": "Joe", "lastName": "Smith"},                      
         "genre":"fiction",
         "uisinec":"Italian",
-        "reviews" Array: 
-        "name":"Making Bread the Easy Way",
+        "reviews": [{"italian news network": "Wow, this bread book is fantastic"}]     
+        "name":"Making Italian Bread the Easy Way",
         "book_id":"40365784"}
 ```
 
@@ -158,7 +160,7 @@ And for each **document** in that collection, you will have a list of key/value 
 
 
 ## How do you import data into Mongo?
-To import data
+
 
 ```JavaScript
         {
