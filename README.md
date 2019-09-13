@@ -118,9 +118,10 @@ The mongo shell interface allows us to create databases, documents, update, dele
 |                                                     |                                               |
 |       To create a new collection              |     ```db.createCollection('name-of-collection');```          |
 |       To show collections              |      ```show collections```         |
+|       To show any collection the database contains             |      ```db.getCollectionNames()```         |
 |       To delete database              |      ```db.dropDatabase();```         |
 |                                                     |                                               |
-|       Import data              |      ```mongoimport -d <db> -c <collection> --drop -f ~/data.json```         |
+|       Import data              |      ```mongoimport -d <db-name> -c <collection-name> --drop -f ~/data.json```         |
 
 <br>
 
@@ -149,17 +150,25 @@ And for each **document** in that collection, you will have a list of key/value 
         "book_id":"40365784"}
 ```
 
-
-
-
-
-
-
-
-
-
+<br>
 
 ## How do you import data into Mongo?
+Suppose you have a collection you want to import into MongoDB.  To do this, what you would need to write the following command in Gitbash:
+```
+mongoimport --db <database-name> --collection <collection-name> --drop --file ~/<file-location-route>
+```
+Breaking down the previous mongoimport command, it does the following:
+* ```mongoimport ``` instructs mongo to import the database to mongo.
+* ``` --db <database-name> ``` imports the data to a database name X, like "users" or "books".
+* ```--collection <collection-name> ``` imports the data into a collection inside the previous database named X, like "cookbooks".
+* ``` --drop ``` is a flag that says that if there is an exisiting collection of the same name, to drop it.
+* ``` --file ~/<file-location-route>``` is the location of the of the file to be imported (i.e. /Desktop/cookbooks.json).
+
+
+
+
+
+
 
 
 ```JavaScript
