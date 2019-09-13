@@ -1,36 +1,35 @@
 # MongoDB Basics Study
-* [What is MongoDB Basics Study?](#)
+
+<br>
+
+## What is MongoDB Basics Study?
+The "MongoDB Basics Study" explores the basic functionality of MongoDB and operation in a local development enviroment including installation, interactions with the MongoDB shell, etc.
+
+Here's an overview of what this study covers:
+
 * [What is MongoDB?](#)
 * [How do you install MongoDB?](#)
 * [How do you use the interactive Mongo shell?](#)
 * [How do you exit Mongo shell and Mongod?](#)
 * [How do you navigate Mongo Shell?](#)
 * [How do you exit Mongo shell and Mongod?](#)
-<br>
 
-## What is MongoDB Basics Study?
-The "MongoDB Basics Study" explores the basic functionality of MongoDB and operation in a local development enviroment including installation, basic concepts, etc.
 
 <br>
 
 ## What is MongoDB?
-MongoDB is a popular, schema-less NoSQL document database that allows you to simply store your json object in the database.  Unlike data stored to memory (which will be lost when the server restartes), MongoDB stores *collections* of *documents*. 
+MongoDB is a popular, open-source, schema-less NoSQL document database that uses a document-oriented data model and non-structured query language (NoSQL).
+
+Unlike data stored to memory (which will be lost when the server restartes), and unlike a SQL relational databases which relies on rows and columns, a MongoDB **database**, which is essentially the container for data, is built on contains *collections* of *documents*. 
 
 **Collections** store documents in a common database (and are analogous to tables in relational databases). Collections hold instance of a sinle type of document.  For example, a collection
 of sports cars (e.g. Ferarri).  
 
-**Documents** would hold instances in that collection.  For example, a collection of of Ferrari sports cars would have different documents of those sports cars (e.g. Fararri 458, Ferrari 488, Ferrari Superfast, etc.).
+**Documents** hold instances in that collection comprised of *key/value pairs* allowing documents to have fields and structures in *BSON* (i.e. Binary style of JSON) document formats.  For example, a collection of of Ferrari sports cars would have different documents of those sports cars (e.g. Fararri 458, Ferrari 488, Ferrari Superfast, etc.).
 
+Data models in MongoDB are versatile allowing you to combine and store data of many types.
 
-
-
-
-
-
-
-
-
-
+<br>
 
 ## How do you install MongoDB?
 Installing MongoDB is a little tricky in that you need to do a few things like editing path variables, using command prompt,
