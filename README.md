@@ -8,9 +8,25 @@
 <br>
 
 ## What is MongoDB Basics Study?
-The "MongoDB Basics Study" explores the basic functionality of the MongoDB including installation, basic concepts, etc.
+The "MongoDB Basics Study" explores the basic functionality of MongoDB and operation in a local development enviroment including installation, basic concepts, etc.
 
 <br>
+
+## What is MongoDB?
+MongoDB is a popular, schema-less NoSQL document database that allows you to simply store your json object in the database.  Unlike data stored to memory (which will be lost when the server restartes), MongoDB stores *collections* of *documents*. 
+
+**Collections** store documents in a common database (and are analogous to tables in relational databases). Collections hold instance of a sinle type of document.  For example, a collection
+of sports cars (e.g. Ferarri).  **Documents** would hold instances in that collection.  For example, a collection of of Ferrari sports cars would have different documents of those sports cars (e.g. Fararri 458, Ferrari 488, Ferrari Superfast, etc.).
+
+
+
+
+
+
+
+
+
+
 
 
 ## How do you install MongoDB?
@@ -19,23 +35,23 @@ and adding a default storage file for your Mongo databases on your local machine
 MongoDB and take special note of some of the observations and issues you might encounter and how to resolve them.
 
 
-### Step 1: Download MongoDB from https://www.mongodb.com/download-center/community :**
+#### Step 1: Download MongoDB from https://www.mongodb.com/download-center/community :**
 > *note: make sure you download the community*
 
-### Step 2: Once the download is complete, install on your local machine:**
+#### Step 2: Once the download is complete, install on your local machine:**
 > *note: DO NOT INSTALL MONGODB COMPASS at this time.  A few issues made it difficult to install... install compass AFTER installation.* 
 
-### Step 3: Navigate to the installation folder, find "mongod" and copy the directory**
+#### Step 3: Navigate to the installation folder, find "mongod" and copy the directory**
 > *note: Your installation file directory might be different, but it should look like this: C:\Program Files\MongoDB\Server\4.0\bin*
 > *factual note: "mongod" is "mongo daemon" which is the mongoDB server*
 
-### Step 4: In your search bar, look for "advanced system settings", select "enviroment variables", edit the PATH variable by adding the previous path.**
+#### Step 4: In your search bar, look for "advanced system settings", select "enviroment variables", edit the PATH variable by adding the previous path.**
 > *note: make sure you put the entire path (i.e. "C:\Program Files\MongoDB\Server\4.0\bin" ) in so that it works correctly*
 
-### Step 5: Install MongoDB Compass to use the database GUI (graphical user interface).**
+#### Step 5: Install MongoDB Compass to use the database GUI (graphical user interface).**
 > *note: make sure you install the community verison*
 
-### Step 6: In command prompt, run "mongod" for the first time and (if needed) create a "db" directory for your future data**
+#### Step 6: In command prompt, run "mongod" for the first time and (if needed) create a "db" directory for your future data**
 * When you run "mongod" for the first time you may get an issue that says:
 ```
         exception in initandlisten: NonExitentPath: Data directory C:\data\db not found, terminating
