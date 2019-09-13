@@ -70,7 +70,7 @@ MongoDB and take special note of some of the observations and issues you might e
 
 
 ## How do you use the interactive Mongo shell?
-The mongo shell interface allows us to create databases, documents, update, delete, manage collections etc. allowsWhen you use the interactive mongo shell, you are essentially interfacing with your database.
+The mongo shell interface allows us to create databases, documents, update, delete, manage collections etc. allowsWhen you use the interactive mongo shell, you are essentially interfacing with your database.  Although much more time will be spent interacting with Mongo through an ORM layer such as *mongoose*, working with Mongo directly is very useful.
 
 **Step 1: First, run "mongod" in command prompt** 
 > *note: once you run "mongod", you wont need to use the command prompt window much because we will be using Gitbash to interface with the database, so you can set it aside*
@@ -92,7 +92,7 @@ The mongo shell interface allows us to create databases, documents, update, dele
         Implicit session: session { "id" : UUID("fdfdb4ce-ecfc-4fd1-b426-3887a1ac7fd3") }
         MongoDB server version: 4.0.5
 ```
-* Now you can navigate your mongo databases!
+* Now you can navigate your mongo collections!
 <br>
 
 ## How do you exit Mongo shell and Mongod?
@@ -115,6 +115,10 @@ The mongo shell interface allows us to create databases, documents, update, dele
 |      To create a new database and go into it               |   ```use <new-database-name>```            |
 |       To create a new collection              |     ```db.createCollection('name-of-collection');```          |
 |       To show collections              |      ```show collections```         |
+|       To delete database              |      ```db.dropDatabase();```         |
+|       To use a named database              |      ```use <database-name>```         |
+|       Import data              |      ```mongoimport -d <db> -c <collection> --drop -f ~/data.json```         |
+
 
 
 
