@@ -109,19 +109,25 @@ The mongo shell interface allows us to create databases, documents, update, dele
 
 ## How do you navigate Mongo Shell?
 
-| **What it does:**                            | **Command in mongo shell:**                             |
-| ---------------------------------------- | ----------------------------------------------|
-|       To find your current location              |   ```db```            |
-|      To show current databases                    |     ```show dbs```          |
-|       To use (i.e. move into) a database     |      ```use <database-name>```         |
-|      To create a new database and go into it               |   ```use <new-database-name>```            |
-|                                                     |                                               |
-|       To create a new collection              |     ```db.createCollection('name-of-collection');```          |
-|       To show collections              |      ```show collections```         |
-|       To show any collection the database contains             |      ```db.getCollectionNames()```         |
-|       To delete database              |      ```db.dropDatabase();```         |
-|                                                     |                                               |
-|       Import data              |      ```mongoimport -d <db-name> -c <collection-name> --drop -f ~/data.json```         |
+| **What it does:**                                 | **Command in mongo shell:**                             |
+| ------------------------------------------------- | ----------------------------------------------------------------------|
+|      To find your current location                |   ```db```                                                        |
+|      To show current databases                    |   ```show dbs```                                            |
+|      To use (and/or create) a database            |   ```use <database-name>```                                        |
+|                                                   |                                                                |
+|                                                   |                                                                |
+|                                                   |                                                                |
+|      To show collections in database              |   ```show collections```                                      |
+|      To show all collections in database by name  |   ```db.getCollectionNames()```                              |
+|      To create a new collection                   |   ```db.createCollection('name-of-collection');```          |
+|                                                   |                                                                |
+|                                                   |                                                                |
+|                                                   |                                                                |
+|      To delete database                           |   ```db.dropDatabase();```                                         |
+|                                                   |                                                                |
+|                                                   |                                                                |
+|                                                   |                                                                |
+|      Import data                                  |   ```mongoimport -d <db-name> -c <collection-name> --drop -f ~/data.json```         |
 
 <br>
 
@@ -160,7 +166,7 @@ mongoimport --db <database-name> --collection <collection-name> --drop --file ~/
 Breaking down the previous mongoimport command, it does the following:
 * ```mongoimport ``` instructs mongo to import the database to mongo.
 * ``` --db <database-name> ``` imports the data to a database name X, like "users" or "books".
-* ```--collection <collection-name> ``` imports the data into a collection inside the previous database named X, like "cookbooks".
+* ```--collection <collection-name> ``` imports the data to collection in database named X, like "cookbooks".
 * ``` --drop ``` is a flag that says that if there is an exisiting collection of the same name, to drop it.
 * ``` --file ~/<file-location-route>``` is the location of the of the file to be imported (i.e. /Desktop/cookbooks.json).
 
