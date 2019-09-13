@@ -5,6 +5,8 @@
 ## What is MongoDB Basics Study?
 The "MongoDB Basics Study" explores the basic functionality of MongoDB and operation in a local development enviroment including installation, interactions with the MongoDB shell, etc.
 
+<br>
+
 Here's an overview of what this study covers:
 
 * [What is MongoDB?](#)
@@ -117,7 +119,67 @@ The mongo shell interface allows us to create databases, documents, update, dele
 |       To use a named database              |      ```use <database-name>```         |
 |       Import data              |      ```mongoimport -d <db> -c <collection> --drop -f ~/data.json```         |
 
+<br>
 
+## What is MongoDB compass and what does it do?
+MongoDB Compass is a simple GUI that allows users to explore, insert, modify, and delete from your databases visually as well as run ad hoc queries.  Inside MongoDB compass, 
+you can see all of your **databases**.  For example, you would see something like the ```testDB``` database.  
+```     
+        > admin
+        > config
+        > local
+        > testDB
+```
+Inside that database, you would see a list of **collections** with additional information, such as: 
+```
+        Collection Name    Documents   Avg. Document Size   Total Document Size    Num. Indexes    Total Index Size    Properties
+        _______________    _________   __________________   ___________________    ____________    ________________    __________
+            books            3,950          451.2 B               1.8 MB                1               45.1 KB          
+```
+And for each **document** in that collection, you will have a list of key/value pairs.
+```
+        {"_id":"59074c7c057aaffaafb0da64",
+        "Author": Object,                      
+        "genre":"fiction",
+        "uisinec":"Italian",
+        "reviews" Array:
+        "name":"Making Bread the Easy Way",
+        "book_id":"40365784"}
+```
+
+
+
+
+
+
+
+
+
+
+
+## How do you import data into Mongo?
+To import data
+
+```JavaScript
+        {
+           "_id":{"$oid":"59074c7c057aaffaafb0da64"},
+           "address":{"building":"2911",
+           "coord":[-73.982241,40.576366],
+           "street":"West   15 Street",
+           "zipcode":"11224"},
+           "borough":"Brooklyn",
+           "cuisine":"Italian",
+           "grades":[{"date":{"$date":"2014-12-18T00:00:00.000Z"},
+           "grade":"A","score":13},
+           {"date":{"$date":"2014-05-15T00:00:00.000Z"},
+           "grade":"A","score":12},
+           {"date":{"$date":"2013-06-12T00:00:00.000Z"},
+           "grade":"A","score":9},
+           {"date":{"$date":"2012-02-06T00:00:00.000Z"},
+           "grade":"A","score":9}],
+           "name":"Gargiulo's Restaurant",
+           "restaurant_id":"40365784"}
+```
 
 
 
