@@ -142,8 +142,8 @@ The mongo shell interface allows us to create databases, documents, update, dele
 |      **READ DATA**                                |                                                                |
 |                                                   |                                                                |
 |        To return ALL documents                    |    ``` db.myCollection.find()```                               |
-|        To return                                           |                                                                |
-|                                                   |                                                                |
+|        To return query                            |    ```db.restaurants.find({lastName: "Smith"}, {isMember: true,}); ```                  |
+|        To return query with arrangement           |    ``` ...find({lastName: "Smith"}, {isMember: true,}.limit(3))```             |
 |                                                   |                                                                |
 |      **UPDATE DATA**                              |                                                                |
 |                                                   |                                                                |
@@ -246,7 +246,9 @@ First, you need to **query** so as to find the relevant documents (i.e. results 
 ```
         db.restaurants.find({borough: "Manhattan"}, {name: 1,});
 ```
-This says that in the restraurants collection, find a match for borough with the name "Soho" and return just the name of those restraurants.  Note that ``` 1``` denotes its inclusion in the search.  The output would look something like this:
+This says that for all document in the restraurants collection, find only those with a "borough" property eqal to the string value "Manhatten" and for those documents that do match, just return the name of the restaurant *(note that ``` 1``` denotes its inclusion in the search).*  
+
+The output would look something like this:
 ```
         db.restaurants.find({borough: "Manhattan"}, {name: 1});
         { "_id" : ObjectId("59074c7c057aaffaafb0da75"), "name" : "Nanni Restaurant" }
@@ -261,9 +263,9 @@ This says that in the restraurants collection, find a match for borough with the
 ```
 
 #### Arranging results
-In order to arrange your results (i.e. order them in anyway you choose), you can chain additional methods like ```.sort```, ```.limit```.  So for example, if you wanted to limit your results to the 3 and sort the results alphabetically, you would query as follows:
+When you **arrange** your results, you are simply deciding what data you want to be returned back to you, whether that be ordering, filtering, etc. To arrange results, you can chain additional methods like ```.sort```, ```.limit```.  So for example, if you wanted to limit your results to the 3 and sort the results alphabetically, you would query as follows:
 ```
-                db.restaurants.find({borough: "Manhattan"}, {name: 1,}).sort({name: 1}).limit(3);
+        db.restaurants.find({borough: "Manhattan"}, {name: 1,}).sort({name: 1}).limit(3);
 ```
 The output would then give you the top alphabetically sorted names, which in this case would be numerical!
 ```
@@ -274,11 +276,6 @@ The output would then give you the top alphabetically sorted names, which in thi
 
 
 
-
-
-
-
-Second, you need to **arrange** so as to decide what data you want to be returned back to you.  For example, sort by property or grades greater than 3 stars, etc.
 
 
 
