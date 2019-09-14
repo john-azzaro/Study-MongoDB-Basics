@@ -25,10 +25,16 @@ MongoDB is a popular, open-source, schema-less NoSQL document database that uses
 
 Unlike data stored to memory (which will be lost when the server restartes) and SQL relational databases (which relies on rows and columns), a MongoDB **database**, which is essentially the container for data, is built on *collections* of *documents* which are versatile data models that allow you to combine and store data of many types. 
 
-**Collections** are a *collection* of documents (and are analogous to *tables* in relational databases). Collections hold instance of a signle type of document.  For example, a collection
-of sports cars (e.g. Ferarri).  Collections do not have any schemas and are usually of the same purpose.
+**Collections** are a *collection* of documents (and are analogous to *tables* in relational databases). Collections hold instance of a signle type of document. For example, a collection
+of sports cars (e.g. Ferarri).  
 
-**Documents** hold instances of that collection, which are sets of *key/value pairs* allowing documents to have fields and structures in *BSON* (i.e. Binary style of JSON) document formats.  For example, a collection of of Ferrari sports cars would have different documents of those sports cars (e.g. Fararri 458, Ferrari 488, Ferrari Superfast, etc.).
+**Documents** hold instances of that collection.  For example, a collection of of Ferrari sports cars would have different documents of those sports cars (e.g. Fararri 458, Ferrari 488, Ferrari Superfast, etc.). 
+
+Some additional features to consider:
+* A document contains *key/value pairs* allowing documents to have fields and structures in *BSON* (i.e. binary style of JSON) document formats. 
+* Mongo accepts stings, integers, floating point decimals, booleans, null, arrays, objects, time stamps, and object ids as value types. 
+* Mongo databases feature *flexible schemas*, which means that all documents in a collection do NOT need to have the same structure.
+* Mongo has a number of collection methods that can create, read, update, and delete documents.  
 
 
 <br>
