@@ -118,9 +118,9 @@ The mongo shell interface allows us to create databases, documents, update, dele
 
 | **What it does:**                                 | **Command in mongo shell:**                             |
 | ------------------------------------------------- | ----------------------------------------------------------------------|
-|                                                                                                                   |
-|      **Basic Navigation**                                                                                         |
-|                                                                                                                   |
+|                                                   |                                                                |
+|      **Basic Navigation**                         |                                                                |
+|                                                   |                                                                |
 |      To find your current location                |   ```db```                                                        |
 |      To show current databases                    |   ```show dbs```                                            |
 |      To use (and/or create) a database            |   ```use <database-name>```                                        |
@@ -131,19 +131,24 @@ The mongo shell interface allows us to create databases, documents, update, dele
 |      To show all collections in database by name  |   ```db.getCollectionNames()```                              |
 |      To create a new collection                   |   ```db.createCollection('name-of-collection');```          |
 |                                                   |                                                                |
-|      **CREATE data**                              |                                                                |
+|      **CREATE data**                              |                                                                                   |
+|                                                   |                                                                                   |
+|         To find a single document                 |     ``` db.<document-name>.findOne();```                                          |
+|         To insert a document                      |      ``` <variable/object> + db.<document-name>.insertOne(variable);```           |
+|                                                   |                                                                                   |
+|      **READ data**                              |                                                                |
 |                                                   |                                                                |
-
-
+|                                                   |                                                                |
+|                                                   |                                                                |
+|      **UPDATE data**                              |                                                                |
+|                                                   |                                                                |
+|                                                   |                                                                |
 |                                                   |                                                                |
 |      **DELETE data**                              |                                                                |
 |                                                   |                                                                |
 |      To delete database                           |   ```db.dropDatabase();```                                         |
 |                                                   |                                                                |
 |                                                   |                                                                |
-|                                                   |                                                                |
-|         To find a single document                 |     ``` db.<document-name>.findOne();```                        |
-|         To insert a document                      |      ``` <variable/object> + db.<document-name>.insertOne(variable);```           |
 |                                                   |                                                                |
 |                                                   |                                                                |
 |                                                   |                                                                |
