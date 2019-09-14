@@ -118,17 +118,25 @@ The mongo shell interface allows us to create databases, documents, update, dele
 
 | **What it does:**                                 | **Command in mongo shell:**                             |
 | ------------------------------------------------- | ----------------------------------------------------------------------|
+|                                                                                                                   |
+|      **Basic Navigation**                                                                                         |
+|                                                                                                                   |
 |      To find your current location                |   ```db```                                                        |
 |      To show current databases                    |   ```show dbs```                                            |
 |      To use (and/or create) a database            |   ```use <database-name>```                                        |
 |                                                   |                                                                |
-|                                                   |                                                                |
+|      **Show and Create Collections**              |                                                                |
 |                                                   |                                                                |
 |      To show collections in database              |   ```show collections```                                      |
 |      To show all collections in database by name  |   ```db.getCollectionNames()```                              |
 |      To create a new collection                   |   ```db.createCollection('name-of-collection');```          |
 |                                                   |                                                                |
+|      **CREATE data**                              |                                                                |
 |                                                   |                                                                |
+
+
+|                                                   |                                                                |
+|      **DELETE data**                              |                                                                |
 |                                                   |                                                                |
 |      To delete database                           |   ```db.dropDatabase();```                                         |
 |                                                   |                                                                |
