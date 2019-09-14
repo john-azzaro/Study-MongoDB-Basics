@@ -201,17 +201,20 @@ Breaking down the previous mongoimport command, it does the following:
 <br>
 
 ## How do you create a document in the MongoDB local environment?
-To create a document in your local enviroment, you need to a variable with an object and the mongo create command:
+To create a document in your local enviroment, you need to a variable (using the *var* keyword) with an object as the value and the mongo create command:
+
 ```
         db.restaurants.insert(myRestaurant);
 ```
+
 Note that there are a few ways to insert documents to your database.
 1. To inser documents (one or many) to your database, use ``` .insert``` method.
 2. To insert ONE documents to your database, you would use the ``` .insertOne``` method.
 3. To insert MANY documents (inside an array) to your database, you would use the ``` .insertMany ``` method.
 
+In the following, we are creating a single document named "burgerRestaurant" from a function expression given beforehand.
 ```
-        var myRestaurant = {
+        var burgerRestaurant = {
           address: {},
           borough: "Soho",
           cuisine: "American",
@@ -219,44 +222,19 @@ Note that there are a few ways to insert documents to your database.
           name: "Burger Nook",
           restaurant_id: "373737373737373737"
         }
-        db.restaurants.insertOne(myRestaurant);
+        db.restaurants.insertOne(burgerRestaurant);            
 ```
 If you successfully submit this document, you will receieve the following output:
 ```
         {
-                "acknowledged" : true,
-                "insertedId" : ObjectId("5d7d14666b1bd9be37a12199")
+                "acknowledged" : true,                                    // Successfully added to database
+                "insertedId" : ObjectId("5d7d14666b1bd9be37a12199")       // unique id provided by Mongo
         }      
 ```
 Note that the ``` insertedId``` is the unique identifier code mongo creates for each document you add.  Although you can create your own id code, it is best that you let Mongo handle that for you.  
 
 
 
-
-
-
-
-
-```JavaScript
-        {
-           "_id":{"$oid":"59074c7c057aaffaafb0da64"},
-           "address":{"building":"2911",
-           "coord":[-73.982241,40.576366],
-           "street":"West   15 Street",
-           "zipcode":"11224"},
-           "borough":"Brooklyn",
-           "cuisine":"Italian",
-           "grades":[{"date":{"$date":"2014-12-18T00:00:00.000Z"},
-           "grade":"A","score":13},
-           {"date":{"$date":"2014-05-15T00:00:00.000Z"},
-           "grade":"A","score":12},
-           {"date":{"$date":"2013-06-12T00:00:00.000Z"},
-           "grade":"A","score":9},
-           {"date":{"$date":"2012-02-06T00:00:00.000Z"},
-           "grade":"A","score":9}],
-           "name":"Gargiulo's Restaurant",
-           "restaurant_id":"40365784"}
-```
 
 
 
