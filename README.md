@@ -119,32 +119,35 @@ The mongo shell interface allows us to create databases, documents, update, dele
 | **What it does:**                                 | **Command in mongo shell:**                             |
 | ------------------------------------------------- | ----------------------------------------------------------------------|
 |                                                   |                                                                |
-|      **Basic Navigation**                         |                                                                |
+|      **BASIC NAVIGATION**                         |                                                                |
 |                                                   |                                                                |
 |      To find your current location                |   ```db```                                                        |
 |      To show current databases                    |   ```show dbs```                                            |
 |      To use (and/or create) a database            |   ```use <database-name>```                                        |
 |                                                   |                                                                |
-|      **Show and Create Collections**              |                                                                |
+|      **SHOW AND CREATE DATABASES/COLLECTIONS**              |                                                                |
 |                                                   |                                                                |
 |      To show collections in database              |   ```show collections```                                      |
 |      To show all collections in database by name  |   ```db.getCollectionNames()```                              |
 |      To create a new collection                   |   ```db.createCollection('name-of-collection');```          |
 |                                                   |                                                                |
-|      **CREATE data**                              |                                                                                   |
+|      **CREATE DATA**                              |                                                                                   |
 |                                                   |                                                                                   |
 |         To find a single document                 |     ``` db.<document-name>.findOne();```                                          |
+|         To insert documents                       |      ``` <variable/object> + db.<document-name>.insert(variable);```           |
+|         To insert a document                      |      ``` <variable/object> + db.<document-name>.insertOne(variable);```           |
+|         To insert array of documents              |      ``` <variable/array> + db.<document-name>.insertMany(variable);```           |
 |         To insert a document                      |      ``` <variable/object> + db.<document-name>.insertOne(variable);```           |
 |                                                   |                                                                                   |
-|      **READ data**                              |                                                                |
+|      **READ DATA**                                |                                                                |
 |                                                   |                                                                |
 |                                                   |                                                                |
 |                                                   |                                                                |
-|      **UPDATE data**                              |                                                                |
+|      **UPDATE DATA**                              |                                                                |
 |                                                   |                                                                |
 |                                                   |                                                                |
 |                                                   |                                                                |
-|      **DELETE data**                              |                                                                |
+|      **DELETE DATA**                              |                                                                |
 |                                                   |                                                                |
 |      To delete database                           |   ```db.dropDatabase();```                                         |
 |                                                   |                                                                |
@@ -198,6 +201,34 @@ Breaking down the previous mongoimport command, it does the following:
 <br>
 
 ## How do you create a document in the MongoDB local environment?
+To create a document in your local enviroment, you need to a variable with an object and the mongo create command:
+```
+        db.restaurants.insert(myRestaurant);
+```
+Note that there are a few ways to insert documents to your database.
+1. To inser documents (one or many) to your database, use ``` .insert``` method.
+2. To insert ONE documents to your database, you would use the ``` .insertOne``` method.
+3. To insert MANY documents (inside an array) to your database, you would use the ``` .insertMany ``` method.
+
+```
+        var myRestaurant = {
+          address: {},
+          borough: "Soho",
+          cuisine: "American",
+          grades: [],
+          name: "Burger Nook",
+          restaurant_id: "373737373737373737"
+        }
+        db.restaurants.insertOne(myRestaurant);
+```
+If you successfully submit this document, you will receieve the following output:
+```
+        {
+                "acknowledged" : true,
+                "insertedId" : ObjectId("5d7d14666b1bd9be37a12199")
+        }      
+```
+Note that the ``` insertedId``` is the unique identifier code mongo creates for each document you add.  Although you can create your own id code, it is best that you let Mongo handle that for you.  
 
 
 
