@@ -16,6 +16,7 @@ Here's an overview of what this study covers:
 * [How do you navigate Mongo Shell?](#)
 * [How do you exit Mongo shell and Mongod?](#)
 * [What does the structure of MongoDB look like?](#)
+* [How do you create a document in the MongoDB local environment?](#)
 
 
 <br>
@@ -133,6 +134,11 @@ The mongo shell interface allows us to create databases, documents, update, dele
 |                                                   |                                                                |
 |                                                   |                                                                |
 |                                                   |                                                                |
+|         To find a single document                 |     ``` db.<document-name>.findOne();```                        |
+|         To insert a document                      |      ``` <variable/object> + db.<document-name>.insertOne(variable);```           |
+|                                                   |                                                                |
+|                                                   |                                                                |
+|                                                   |                                                                |
 |      Import data                                  |   ```mongoimport -d <db-name> -c <collection-name> --drop -f ~/data.json```         |
 
 <br>
@@ -175,6 +181,10 @@ Breaking down the previous mongoimport command, it does the following:
 * ```--collection <collection-name> ``` imports the data to collection in database named X, like "cookbooks".
 * ``` --drop ``` is a flag that says that if there is an exisiting collection of the same name, to drop it.
 * ``` --file ~/<file-location-route>``` is the location of the of the file to be imported (i.e. /Desktop/cookbooks.json).
+
+<br>
+
+## How do you create a document in the MongoDB local environment?
 
 
 
