@@ -118,29 +118,31 @@ The mongo shell interface allows us to create databases, documents, update, dele
 
 | **What it does:**                                 | **Command in mongo shell:**                             |
 | ------------------------------------------------- | ----------------------------------------------------------------------|
-|                                                   |                                                                |
+|                                                   |   *Note: myDatabase > myCollection > myDocument*                                |
 |      **BASIC NAVIGATION**                         |                                                                |
 |                                                   |                                                                |
 |      To find your current location                |   ```db```                                                        |
 |      To show current databases                    |   ```show dbs```                                            |
-|      To use (and/or create) a database            |   ```use <database-name>```                                        |
+|      To use (and/or create) a database            |   ```use myDatabase```                                        |
 |                                                   |                                                                |
-|      **SHOW AND CREATE DATABASES/COLLECTIONS**              |                                                                |
+|      **SHOW/CREATE DATABASES/COLLECTIONS**        |                                                                |
 |                                                   |                                                                |
 |      To show collections in database              |   ```show collections```                                      |
-|      To show all collections in database by name  |   ```db.getCollectionNames()```                              |
-|      To create a new collection                   |   ```db.createCollection('name-of-collection');```          |
+|      To show all collections by name              |       ```db.getCollectionNames()```                              |
+|      To create a new collection                   |   ```db.createCollection('myCollection');```          |
 |                                                   |                                                                |
 |      **CREATE DATA**                              |                                                                                   |
 |                                                   |                                                                                   |
-|         To find a single document                 |     ``` db.<document-name>.findOne();```                                          |
-|         To insert documents                       |      ``` <variable/object> + db.<document-name>.insert(variable);```           |
-|         To insert a document                      |      ``` <variable/object> + db.<document-name>.insertOne(variable);```           |
-|         To insert array of documents              |      ``` <variable/array> + db.<document-name>.insertMany(variable);```           |
-|         To insert a document                      |      ``` <variable/object> + db.<document-name>.insertOne(variable);```           |
+|         To find a single document                 |     ``` db.myCollection.findOne();```                                          |
+|         To insert documents                       |      ``` <variable-to-insert> + db.myCollection.insert(variable);```           |
+|         To insert a document                      |      ``` <variable-to-insert> + db.myCollection.insertOne(variable);```           |
+|         To insert array of documents              |      ``` <variable/array> + db.myCollection.insertMany(variable);```           |
+|         To insert a document                      |      ``` <variable/object> + db.<myCollection.insertOne(variable);```           |
 |                                                   |                                                                                   |
 |      **READ DATA**                                |                                                                |
 |                                                   |                                                                |
+|        To return ALL documents                    |    ``` db.myCollection.find()```                               |
+|        To return                                           |                                                                |
 |                                                   |                                                                |
 |                                                   |                                                                |
 |      **UPDATE DATA**                              |                                                                |
@@ -200,7 +202,7 @@ Breaking down the previous mongoimport command, it does the following:
 
 <br>
 
-## How do you create a document in the MongoDB local environment?
+## How do you CREATE a document in the MongoDB local environment?
 To create a document in your local enviroment, you need to a variable (using the *var* keyword) with an object as the value and the mongo create command:
 
 ```
@@ -216,7 +218,7 @@ In the following, we are creating a single document named "burgerRestaurant" fro
 ```
         var burgerRestaurant = {
           address: {},
-          borough: "Soho",
+          borough: "Manhattan",
           cuisine: "American",
           grades: [],
           name: "Burger Nook",
@@ -232,6 +234,52 @@ If you successfully submit this document, you will receieve the following output
         }      
 ```
 Note that the ``` insertedId``` is the unique identifier code mongo creates for each document you add.  Although you can create your own id code, it is best that you let Mongo handle that for you.  
+
+<br>
+
+## How do you READ a document from an existing database?
+When you attempt to read a document from a database, you need consider 2 things: *querying* and *arranging*.
+
+#### Querying with .find
+First, you need to **query** so as to find the relevant documents (i.e. results that match specific properties in your document's key/value pairs).  For example, we want to find restaurants in the borough of Soho, etc.  To query, you can use the ``` .find ``` method.  *Find* can be called with TWO optional parameters: a *query object* that matches the matching criteria and a *projection object* that controls what properties are returned from each document.  Take the following query:
+
+```
+        db.restaurants.find({borough: "Manhattan"}, {name: 1,});
+```
+This says that in the restraurants collection, find a match for borough with the name "Soho" and return just the name of those restraurants.  Note that ``` 1``` denotes its inclusion in the search.  The output would look something like this:
+```
+        db.restaurants.find({borough: "Manhattan"}, {name: 1});
+        { "_id" : ObjectId("59074c7c057aaffaafb0da75"), "name" : "Nanni Restaurant" }
+        { "_id" : ObjectId("59074c7c057aaffaafb0da88"), "name" : "The Riviera Cafe" }
+        { "_id" : ObjectId("59074c7c057aaffaafb0da6d"), "name" : "Hop Kee Restaurant" }
+        { "_id" : ObjectId("59074c7c057aaffaafb0daa2"), "name" : "Jg Melon Restaurant" }
+        { "_id" : ObjectId("59074c7c057aaffaafb0daa8"), "name" : "Jackson Hole" }
+        { "_id" : ObjectId("59074c7c057aaffaafb0da60"), "name" : "Joe Allen Restaurant" }
+        { "_id" : ObjectId("59074c7c057aaffaafb0dabd"), "name" : "Fiorellos" }
+        { "_id" : ObjectId("59074c7c057aaffaafb0dad0"), "name" : "Da Silvano Restaurant" }
+        { "_id" : ObjectId("59074c7c057aaffaafb0daca"), "name" : "Oyster Bar" }
+```
+
+#### Arranging results
+In order to arrange your results (i.e. order them in anyway you choose), you can chain additional methods like ```.sort```, ```.limit```.  So for example, if you wanted to limit your results to the 3 and sort the results alphabetically, you would query as follows:
+```
+                db.restaurants.find({borough: "Manhattan"}, {name: 1,}).sort({name: 1}).limit(3);
+```
+The output would then give you the top alphabetically sorted names, which in this case would be numerical!
+```
+        { "_id" : ObjectId("59074c7c057aaffaafb0f8d8"), "name" : "12 Street Ale House" }
+        { "_id" : ObjectId("59074c7c057aaffaafb1063a"), "name" : "137 Bar & Grill" }
+        { "_id" : ObjectId("59074c7c057aaffaafb0f22e"), "name" : "169 Bar" }
+```
+
+
+
+
+
+
+
+Second, you need to **arrange** so as to decide what data you want to be returned back to you.  For example, sort by property or grades greater than 3 stars, etc.
+
 
 
 
