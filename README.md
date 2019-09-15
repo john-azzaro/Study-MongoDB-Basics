@@ -128,31 +128,35 @@ The mongo shell interface allows us to create databases, documents, update, dele
 |      **SHOW/CREATE DATABASES/COLLECTIONS**        |                                                                |
 |                                                   |                                                                |
 |      To show collections in database              |   ```show collections```                                      |
-|      To show all collections by name              |       ```db.getCollectionNames()```                              |
+|      To show all collections by name              |   ```db.getCollectionNames()```                              |
 |      To create a new collection                   |   ```db.createCollection('myCollection');```          |
 |                                                   |                                                                |
 |      **CREATE DATA**                              |                                                                                   |
 |                                                   |                                                                                   |
-|         To find a single document                 |     ``` db.myCollection.findOne();```                                          |
-|         To insert documents                       |      ``` <variable-to-insert> + db.myCollection.insert(variable);```           |
-|         To insert a document                      |      ``` <variable-to-insert> + db.myCollection.insertOne(variable);```           |
-|         To insert array of documents              |      ``` <variable/array> + db.myCollection.insertMany(variable);```           |
-|         To insert a document                      |      ``` <variable/object> + db.<myCollection.insertOne(variable);```           |
+|         To find a single document                 |   ``` db.myCollection.findOne();```                                          |
+|         To insert documents                       |   ``` <variable-to-insert> + db.myCollection.insert(variable);```           |
+|         To insert a document                      |   ``` <variable-to-insert> + db.myCollection.insertOne(variable);```           |
+|         To insert array of documents              |   ``` <variable/array> + db.myCollection.insertMany(variable);```           |
+|         To insert a document                      |   ``` <variable/object> + db.<myCollection.insertOne(variable);```           |
 |                                                   |                                                                                   |
 |      **READ DATA**                                |                                                                |
 |                                                   |                                                                |
-|        To return ALL documents                    |    ``` db.myCollection.find()```                               |
-|        To return query                            |    ```db.restaurants.find({lastName: "Smith"}, {isMember: true,}); ```                  |
-|        To return query with arrangement           |    ```.find({lastName: "Smith"}, {isMember: true,}.limit(3))```             |
+|        To return ALL documents                    |   ``` db.myCollection.find()```                               |
+|        To return query                            |   ```db.restaurants.find({lastName: "Smith"}, {isMember: true,}); ```                  |
+|        To return query with arrangement           |   ```.find({lastName: "Smith"}, {isMember: true,}.limit(3))```             |
 |                                                   |                                                                |
 |      **UPDATE DATA**                              |                                                                |
 |                                                   |                                                                |
-|        To update a document                       |    ```db.restaurants.updateOne({_id: objectId}, {$set: {name: "Joe"}});```                                                            |
-|        To replace a document                       |    ```db.restaurants.replaceOne({_id: objectId}, {$set: {name: "Joe"}});```                                                            |
+|        To update a document                       |   ```db.restaurants.updateOne({_id: objectId}, {$set: {name: "Joe"}});```          |
+|        To replace a document                      |   ```db.restaurants.replaceOne({_id: objectId}, {$set: {name: "Joe"}});```        |
 |                                                   |                                                                |
-|      **DELETE DATA**                              |                                                                |
+|       **DELETE DATA**                             |                                                                |
 |                                                   |                                                                |
-|      To delete database                           |   ```db.dropDatabase();```                                         |
+|         To remove data                            |    ```db.restaurants.remove({_id: objectId}); ```                                                            |
+|                                                   |                                                                |
+|      **DELETE DATABASE**                              |                                                                |
+|                                                   |                                                                |
+|        To delete database                         |   ```db.dropDatabase();```                                         |
 |                                                   |                                                                |
 |                                                   |                                                                |
 |                                                   |                                                                |
@@ -302,6 +306,14 @@ In the same vein as the UPDATE method, when you REPLACE a document, you are repl
            {_id: objectId},
            {$set: {name: "Salty's Seafood"}}
         );
+```
+
+<br>
+
+## How do you DELETE a document?
+To delete a document, you can use either the *.remove* or *.deleteOne* command.  With each command, the first argument takes a query object (i.e. {_id: 1}).  You can also add a justOne boolean to determine if the remove command should only remove a single document matching the criteria.
+```
+        db.restaurants.remove({_id: objectId});
 ```
 
 
