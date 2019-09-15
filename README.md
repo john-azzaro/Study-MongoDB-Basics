@@ -290,12 +290,18 @@ Updating a document in Mongo can either be done by updating one of the propertie
            {_id: objectId},                       // document to be updated (by id)
            {$set: {name: "Salty's Seafood"}}      // $set used to rename the name to "Salty's Seafood"
         );
-
 ```
 
+<br>
 
-
-
+## How do you REPLACE a document?
+In the same vein as the UPDATE method, when you REPLACE a document, you are replacing the ENTIRE document.  Be aware that when you do this, all of the properties in the object will be replaced with the new replaced document.
+```
+        db.restaurants.replaceOne(               // uses .replaceOne instead of .updateOne.
+           {_id: objectId},
+           {$set: {name: "Salty's Seafood"}}
+        );
+```
 
 
 
