@@ -147,7 +147,7 @@ The mongo shell interface allows us to create databases, documents, update, dele
 |                                                   |                                                                |
 |      **UPDATE DATA**                              |                                                                |
 |                                                   |                                                                |
-|        To update a document                       |    ``` ```                                                            |
+|        To update a document                       |    ```db.restaurants.updateOne({_id: objectId}, {$set: {name: "Joe"}});```                                                            |
 |                                                   |                                                                |
 |      **DELETE DATA**                              |                                                                |
 |                                                   |                                                                |
@@ -158,6 +158,10 @@ The mongo shell interface allows us to create databases, documents, update, dele
 |                                                   |                                                                |
 |                                                   |                                                                |
 |      Import data                                  |   ```mongoimport -d <db-name> -c <collection-name> --drop -f ~/data.json```         |
+
+
+
+
 
 <br>
 
@@ -282,6 +286,10 @@ Updating a document in Mongo can either be done by updating one of the propertie
 2. Specify *how* each document needs to be updated.
 
 ```
+        db.restaurants.updateOne( 
+           {_id: objectId},                       // document to be updated (by id)
+           {$set: {name: "Salty's Seafood"}}      // $set used to rename the name to "Salty's Seafood"
+        );
 
 ```
 
