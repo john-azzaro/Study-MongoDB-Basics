@@ -16,7 +16,11 @@ Here's an overview of what this study covers:
 * [How do you navigate Mongo Shell?](#)
 * [How do you exit Mongo shell and Mongod?](#)
 * [What does the structure of MongoDB look like?](#)
-* [How do you create a document in the MongoDB local environment?](#)
+* [How do you CREATE a document in the MongoDB local environment?](#)
+* [How do you READ a document from an existing database?](#)
+* [How do you UPDATE a document?](#)
+* [How do you REPLACE a document?](#)
+* [How do you DELETE a document?](#)
 
 
 <br>
