@@ -152,17 +152,16 @@ The mongo shell interface allows us to create databases, documents, update, dele
 |                                                   |                                                                |
 |       **DELETE DATA**                             |                                                                |
 |                                                   |                                                                |
-|         To remove data                            |    ```db.restaurants.remove({_id: objectId}); ```                                                            |
+|         To remove data                            |    ```db.restaurants.remove({_id: objectId}); ```                  |
+|         To remove data                            |    ```db.restaurants.deleteOne({_id: objectId}); ```                      |
 |                                                   |                                                                |
-|      **DELETE DATABASE**                              |                                                                |
+|      **DELETE DATABASE**                          |                                                                |
 |                                                   |                                                                |
 |        To delete database                         |   ```db.dropDatabase();```                                         |
 |                                                   |                                                                |
+|       **IMPORTING DATA**                          |                                                                |
 |                                                   |                                                                |
-|                                                   |                                                                |
-|                                                   |                                                                |
-|                                                   |                                                                |
-|      Import data                                  |   ```mongoimport -d <db-name> -c <collection-name> --drop -f ~/data.json```         |
+|       To import data                              |   ```mongoimport -d <db-name> -c <collection-name> --drop -f ~/data.json```         |
 
 
 
