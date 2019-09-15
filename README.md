@@ -143,11 +143,11 @@ The mongo shell interface allows us to create databases, documents, update, dele
 |                                                   |                                                                |
 |        To return ALL documents                    |    ``` db.myCollection.find()```                               |
 |        To return query                            |    ```db.restaurants.find({lastName: "Smith"}, {isMember: true,}); ```                  |
-|        To return query with arrangement           |    ``` ...find({lastName: "Smith"}, {isMember: true,}.limit(3))```             |
+|        To return query with arrangement           |    ```.find({lastName: "Smith"}, {isMember: true,}.limit(3))```             |
 |                                                   |                                                                |
 |      **UPDATE DATA**                              |                                                                |
 |                                                   |                                                                |
-|                                                   |                                                                |
+|        To update a document                       |    ``` ```                                                            |
 |                                                   |                                                                |
 |      **DELETE DATA**                              |                                                                |
 |                                                   |                                                                |
@@ -272,6 +272,17 @@ The output would then give you the top alphabetically sorted names, which in thi
         { "_id" : ObjectId("59074c7c057aaffaafb0f8d8"), "name" : "12 Street Ale House" }
         { "_id" : ObjectId("59074c7c057aaffaafb1063a"), "name" : "137 Bar & Grill" }
         { "_id" : ObjectId("59074c7c057aaffaafb0f22e"), "name" : "169 Bar" }
+```
+
+<br>
+
+## How do you UPDATE a document?
+Updating a document in Mongo can either be done by updating one of the properties of a document *or* the entire document itself.  To update a document (i.e. replace one set of information with an another *updated* set of infromation), you need to:
+1. Specify the dcouments to update
+2. Specify *how* each document needs to be updated.
+
+```
+
 ```
 
 
