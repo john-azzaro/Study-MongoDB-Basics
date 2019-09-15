@@ -148,6 +148,7 @@ The mongo shell interface allows us to create databases, documents, update, dele
 |      **UPDATE DATA**                              |                                                                |
 |                                                   |                                                                |
 |        To update a document                       |    ```db.restaurants.updateOne({_id: objectId}, {$set: {name: "Joe"}});```                                                            |
+|        To replace a document                       |    ```db.restaurants.replaceOne({_id: objectId}, {$set: {name: "Joe"}});```                                                            |
 |                                                   |                                                                |
 |      **DELETE DATA**                              |                                                                |
 |                                                   |                                                                |
