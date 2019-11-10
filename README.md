@@ -219,7 +219,7 @@ like Desktop.
 ```
 If successful, you should see the following:
 ```
-   $ mongoimport --db blog-app-with-embedded-models --collection authors --drop --file ~/Desktop/authors-seed-data.json
+   $ mongoimport --db myDatabase --collection myCollections --drop --file ~/Desktop/seed-data.json
    2019-11-10T08:20:09.987-0800    connected to: localhost
    2019-11-10T08:20:09.989-0800    dropping: blog-app-with-embedded-models.authors
    2019-11-10T08:20:11.017-0800    imported 4 documents     
