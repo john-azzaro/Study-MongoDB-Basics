@@ -221,7 +221,7 @@ If successful, you should see the following:
 ```
    $ mongoimport --db myDatabase --collection myCollections --drop --file ~/Desktop/seed-data.json
    2019-11-10T08:20:09.987-0800    connected to: localhost
-   2019-11-10T08:20:09.989-0800    dropping: blog-app-with-embedded-models.authors
+   2019-11-10T08:20:09.989-0800    dropping: myDatabase.myCollections
    2019-11-10T08:20:11.017-0800    imported 4 documents     
 ```
 Then in the mongo shell (mongo), type ```show dbs``` and you should see your new database! 
