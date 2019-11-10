@@ -203,7 +203,7 @@ And for each **document** in that collection, you will have a list of key/value 
 ## How do you import data into Mongo?
 Suppose you have a collection you want to import into MongoDB.  To do this, what you would need to write the following command in Gitbash:
 ```
-mongoimport --db <database-name> --collection <collection-name> --drop --file ~/<file-location-route>
+    mongoimport --db <database-name> --collection <collection-name> --drop --file ~/<file-location-route>
 ```
 Breaking down the previous mongoimport command, it does the following:
 * ```mongoimport ``` instructs mongo to import the database to mongo.
@@ -211,6 +211,20 @@ Breaking down the previous mongoimport command, it does the following:
 * ```--collection <collection-name> ``` imports the data to collection in database named X, like "cookbooks".
 * ``` --drop ``` is a flag that says that if there is an exisiting collection of the same name, to drop it.
 * ``` --file ~/<file-location-route>``` is the location of the of the file to be imported (i.e. /Desktop/cookbooks.json).
+
+For example, if you have a .json file you want to import to your MongoDB database, you would first create or download the file to a specific location
+like Desktop.
+```
+  $ mongoimport --db myDatabase --collection myCollections --drop --file ~/Desktop/seed-data.json  
+```
+If successful, you should see the following:
+```
+   $ mongoimport --db blog-app-with-embedded-models --collection authors --drop --file ~/Desktop/authors-seed-data.json
+   2019-11-10T08:20:09.987-0800    connected to: localhost
+   2019-11-10T08:20:09.989-0800    dropping: blog-app-with-embedded-models.authors
+   2019-11-10T08:20:11.017-0800    imported 4 documents     
+```
+Then in the mongo shell (mongo), type ```show dbs``` and you should see your new database! 
 
 <br>
 
