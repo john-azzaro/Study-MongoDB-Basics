@@ -225,6 +225,9 @@ If successful, you should see the following:
    2019-11-10T08:20:11.017-0800    imported 4 documents     
 ```
 Then in the mongo shell (mongo), type ```show dbs``` and you should see your new database! 
+```
+   myDatabase     0.000GB
+```
 
 <br>
 
